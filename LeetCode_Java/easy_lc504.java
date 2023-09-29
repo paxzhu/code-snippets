@@ -4,21 +4,17 @@ class Solution {
             return "0";
         }
 
-        boolean sign = true;
-        if(num < 0) {
-            sign = false;
-            num = -num;
-        }
-        
-        List<String> overs = new ArrayList<>();
+        boolean isNegative = num < 0;
+        num = Math.abs(num);
+
+        StringBuilder res = new StringBuilder();
         while(num != 0) {
-            overs.add(String.valueOf(num % 7));
-            num = num / 7;
+            res.append(num % 7);
+            num /= 7;
         }
-        if(!sign) {
-            overs.add("-");
+        if(isNegative) {
+            res.append("-");
         }
-        Collections.reverse(overs);
-        return String.join("", overs);
+        return res.reverse().toString();
     }
 }
