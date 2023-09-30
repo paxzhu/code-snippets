@@ -1,7 +1,7 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int left = bisect(nums, target, x -> x < target);
-        int right = bisect(nums, target, x -> x <= target) - 1;
+        int left = bisect(nums, x -> x < target);
+        int right = bisect(nums, x -> x <= target) - 1;
 
         if (left <= right) {
             return new int[]{left, right};
@@ -10,7 +10,7 @@ class Solution {
         }
     }
 
-    private int bisect(int[] nums, int target, Predicate<Integer> predicate) {
+    private int bisect(int[] nums, Predicate<Integer> predicate) {
         int left = 0;
         int right = nums.length;
         while (left < right) {
