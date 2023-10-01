@@ -15,12 +15,15 @@ class Solution {
                     j += 1;
                     nxt = command.charAt(i+j);
                 }
-                if(j == 1) {
+
+                String sub = command.substring(i, i + j + 1);
+                if(sub.equals("()")) {
                     ans.append("o");
                 }
-                else if(j == 3) {
+                else if(sub.equals("(al)")) {
                     ans.append("al");
                 }
+
                 i += j+1;
             }
         }
