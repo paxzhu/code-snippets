@@ -1,0 +1,25 @@
+/* styles.css */
+
+/* 定义动画样式 */
+.slide-animation {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* 定义关键帧动画 */
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100px);
+    }
+  }
+  
+  /* 应用动画样式 */
+  .slide-animation:hover {
+    animation: slide 0.3s ease-in-out;
+  }
+  
